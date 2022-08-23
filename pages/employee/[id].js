@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styles from "../../styles/Employees.module.css";
 
 export const getStaticPaths = async () => {
@@ -42,8 +43,9 @@ export const getStaticProps = async (context) => {
 };
 
 const Details = ({ employee, location }) => {
+  const [likes, setLikes] = useState(employee.liked);
   const handleClick = () => {
-    let likes = employee.liked + 1;
+    setLikes(likes + 1);
     fetch(
       `https://test-task-api-optimo.herokuapp.com/employee/${employee.id}`,
       {
@@ -69,7 +71,7 @@ const Details = ({ employee, location }) => {
           ></img>
           <h1>{employee.name}</h1>
           <h3>Position: {employee.description}</h3>
-          <h3>Likes: {employee.liked}</h3>
+          <h3>Likes: {likes}</h3>
 
           <h3>Location: {location}</h3>
           <button className={styles.button} onClick={handleClick}>
