@@ -22,12 +22,24 @@ export const getStaticProps = async (context) => {
   );
   const data = await res.json();
 
+  const loc = data.location_id;
+  const res2 = await fetch(
+    "https://test-task-api-optimo.herokuapp.com/location"
+  );
+  const data2 = await res2.json();
+  let location;
+  data2.map((item) => {
+    if (item.id === loc) {
+      location = item.name;
+    }
+  });
+
   return {
-    props: { employee: data },
+    props: { employee: data, location: location },
   };
 };
 
-const Details = ({ employee }) => {
+const Details = ({ employee, location }) => {
   return (
     <div>
       <h1>{employee.name}</h1>
@@ -37,7 +49,7 @@ const Details = ({ employee }) => {
         src={`https://test-task-api-optimo.herokuapp.com${employee.avatar}`}
         alt="avatar"
       ></img>
-      <h3>Location ID: {employee.location_id}</h3>
+      <h3>Location: {location}</h3>
     </div>
   );
 };
