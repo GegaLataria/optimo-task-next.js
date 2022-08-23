@@ -1,49 +1,45 @@
-import { useRouter } from "next/router";
-import { useState } from "react";
-
-export default function Employee() {
-  const router = useRouter();
-  const { id } = router.query;
-
-  return <h1>Hello {id}</h1>;
-}
-
-export async function getStaticProps({ params }) {
-  const req = await fetch(
-    `https://test-task-api-optimo.herokuapp.com/${params.id}.json`
+export const getStaticPaths = async () => {
+  const res = await fetch(
+    "https://test-task-api-optimo.herokuapp.com/employee"
   );
-  const data = await req.json();
+  const data = await res.json();
+
+  const paths = data.map((employee) => {
+    return {
+      params: { id: employee.id.toString() },
+    };
+  });
+  return {
+    paths: paths,
+    fallback: false,
+  };
+};
+
+export const getStaticProps = async (context) => {
+  const id = context.params.id;
+  const res = await fetch(
+    `https://test-task-api-optimo.herokuapp.com/employee/${id}`
+  );
+  const data = await res.json();
 
   return {
     props: { employee: data },
   };
-}
+};
 
-export async function getStaticPaths() {
-  const req = await fetch(
-    "https://test-task-api-optimo.herokuapp.com/employee.json"
+const Details = ({ employee }) => {
+  return (
+    <div>
+      <h1>{employee.name}</h1>
+      <h3>Position: {employee.description}</h3>
+      <h3>Likes: {employee.liked}</h3>
+      <img
+        src={`https://test-task-api-optimo.herokuapp.com${employee.avatar}`}
+        alt="avatar"
+      ></img>
+      <h3>Location ID: {employee.location_id}</h3>
+    </div>
   );
-  const data = await req.json();
+};
 
-  // const paths = data.map((employee) => {
-  //   return {
-  //     params: { id: employee },
-  //   };
-  // });
-
-  // return {
-  //   paths,
-  //   fallback: false,
-  // };
-  return {
-    paths: [
-      { params: { id: "1" } },
-      { params: { id: "2" } },
-      { params: { id: "3" } },
-      { params: { id: "4" } },
-      { params: { id: "5" } },
-      { params: { id: "6" } },
-    ],
-    fallback: false,
-  };
-}
+export default Details;
