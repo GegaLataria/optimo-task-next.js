@@ -1,3 +1,5 @@
+import styles from "../../styles/Employees.module.css";
+
 export const getStaticPaths = async () => {
   const res = await fetch(
     "https://test-task-api-optimo.herokuapp.com/employee"
@@ -42,14 +44,24 @@ export const getStaticProps = async (context) => {
 const Details = ({ employee, location }) => {
   return (
     <div>
-      <h1>{employee.name}</h1>
-      <h3>Position: {employee.description}</h3>
-      <h3>Likes: {employee.liked}</h3>
-      <img
-        src={`https://test-task-api-optimo.herokuapp.com${employee.avatar}`}
-        alt="avatar"
-      ></img>
-      <h3>Location: {location}</h3>
+      <h1 className={styles.header}>
+        <span className={styles.title}>Employee: {employee.name}</span>
+      </h1>
+      <div className={styles.employee}>
+        <div>
+          <img
+            className={styles.avatar}
+            src={`https://test-task-api-optimo.herokuapp.com${employee.avatar}`}
+            alt="avatar"
+          ></img>
+          <h1>{employee.name}</h1>
+          <h3>Position: {employee.description}</h3>
+          <h3>Likes: {employee.liked}</h3>
+
+          <h3>Location: {location}</h3>
+          <button className={styles.button}>Like</button>
+        </div>
+      </div>
     </div>
   );
 };

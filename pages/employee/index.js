@@ -19,7 +19,9 @@ export default function EmployeesList({ employees }) {
 
   return (
     <div>
-      <h1 className={styles.header}>Employees List</h1>
+      <h1 className={styles.header}>
+        <span className={styles.title}>Employees List</span>
+      </h1>
       <div>
         <label>
           Filter by:

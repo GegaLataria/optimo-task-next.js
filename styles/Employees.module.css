@@ -1,5 +1,11 @@
 .header {
     text-align: center;
+    margin-top: 7vw;
+    font-size: 50px;    
+}
+
+.title {
+    border-bottom: 3px solid #fd8467;
 }
 
 .test{
@@ -17,4 +23,31 @@
 
 .listitem:hover {
     background-color: #fd8467;
+}
+
+.employee {
+    background-color: hsla(12,97%,70%,.1);
+    border: 0.5px solid #fd8467;
+    margin: 0px 20px 0px 20px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 50px;
+}
+
+.avatar {
+   border-radius: 10px;
+}
+
+.button {
+    background-color: #fd8467;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.button:focus {
+    background-color: rgba(255, 68, 0, 0.8);
 }

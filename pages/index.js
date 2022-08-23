@@ -1,5 +1,9 @@
-import Link from "next/link";
+import styles from "../styles/Employees.module.css";
 
 export default function Home() {
-  return <div>Main Page</div>;
+  return (
+    <h1 className={styles.header}>
+      <span className={styles.title}>Main Page</span>
+    </h1>
+  );
 }
