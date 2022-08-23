@@ -42,6 +42,19 @@ export const getStaticProps = async (context) => {
 };
 
 const Details = ({ employee, location }) => {
+  const handleClick = () => {
+    let likes = employee.liked + 1;
+    fetch(
+      `https://test-task-api-optimo.herokuapp.com/employee/${employee.id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(likes),
+      }
+    );
+  };
   return (
     <div>
       <h1 className={styles.header}>
@@ -59,7 +72,9 @@ const Details = ({ employee, location }) => {
           <h3>Likes: {employee.liked}</h3>
 
           <h3>Location: {location}</h3>
-          <button className={styles.button}>Like</button>
+          <button className={styles.button} onClick={handleClick}>
+            Like
+          </button>
         </div>
       </div>
     </div>
