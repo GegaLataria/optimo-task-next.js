@@ -24,7 +24,7 @@
 
 .top {
     border: 3px solid blue;
-    background-color: rgba(128, 0, 128, .55);
+    background-color: rgba(128, 0, 128, .6);
 }
 
 .listitem:hover {
