@@ -8,6 +8,19 @@ export const getStaticProps = async () => {
   );
   const data = await res.json();
 
+  //newly added code for location fetching
+  // const loc = data.location_id;
+  // const res2 = await fetch(
+  //   "https://test-task-api-optimo.herokuapp.com/location"
+  // );
+  // const data2 = await res2.json();
+  // let location;
+  // data2.map((item) => {
+  //   if (item.id === loc) {
+  //     location = item.name;
+  //   }
+  // });
+
   return {
     props: { employees: data },
   };
@@ -39,7 +52,7 @@ export default function EmployeesList({ employees }) {
         <span className={styles.title}>Employees List</span>
       </h1>
       <div>
-        <label>
+        <label className={styles.label}>
           Filter by position:
           <select onChange={handleChange} value={selectedPosition}>
             <option value="noposition">None</option>
@@ -48,20 +61,22 @@ export default function EmployeesList({ employees }) {
             <option value="Architect">Architect</option>
           </select>
         </label>
-        {<h1>{selectedLocation}</h1>}
-        <label>
+        <label className={styles.label}>
           Filter by Location:
           <select onChange={handleLocationChange} value={selectedLocation}>
             <option value="noloc">None</option>
-            <option value="USA">USA</option>
-            <option value="EUR">EUR</option>
-            <option value="GEO">GEO</option>
+            <option value="1">USA</option>
+            <option value="2">EUR</option>
+            <option value="3">GEO</option>
           </select>
         </label>
       </div>
+
       {employees.map((employee) =>
-        selectedPosition === "noposition" ||
-        employee.description === selectedPosition ? (
+        (selectedPosition === "noposition" ||
+          employee.description === selectedPosition) &&
+        (selectedLocation === "noloc" ||
+          selectedLocation.toString() === employee.location_id.toString()) ? (
           <Link href={`/employee/${employee.id}`} key={employee.id}>
             <div
               className={[
