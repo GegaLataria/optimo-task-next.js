@@ -15,7 +15,7 @@ export const getStaticProps = async () => {
 
 export default function EmployeesList({ employees }) {
   const [selectedPosition, setSelectedPosition] = useState("noposition");
-  const [filteredPosition, setFilteredPosition] = useState(employees);
+  const [selectedLocation, setSelectedLocation] = useState("noloc");
   let topThree = [];
   employees.sort((a, b) =>
     a.liked > b.liked ? -1 : b.liked > a.liked ? 1 : 0
@@ -27,19 +27,11 @@ export default function EmployeesList({ employees }) {
 
   const handleChange = (event) => {
     setSelectedPosition(event.target.value);
-    // if (selectedPosition !== "noposition") {
-    //   let x = employees.filter((a) => {
-    //     if (a.description === selectedPosition) {
-    //       return a;
-    //     }
-    //   });
-    //   setFilteredPosition(x);
-    // } else {
-    //   setFilteredPosition(employees);
-    // }
   };
 
-  // console.log(filteredPosition);
+  const handleLocationChange = (event) => {
+    setSelectedLocation(event.target.value);
+  };
 
   return (
     <div>
@@ -56,20 +48,20 @@ export default function EmployeesList({ employees }) {
             <option value="Architect">Architect</option>
           </select>
         </label>
-        <h1>{selectedPosition}</h1>
+        {<h1>{selectedLocation}</h1>}
         <label>
           Filter by Location:
-          <select>
+          <select onChange={handleLocationChange} value={selectedLocation}>
             <option value="noloc">None</option>
-            <option value="usa">USA</option>
-            <option value="eur">EUR</option>
-            <option value="geo">GEO</option>
+            <option value="USA">USA</option>
+            <option value="EUR">EUR</option>
+            <option value="GEO">GEO</option>
           </select>
         </label>
       </div>
       {employees.map((employee) =>
-        employee.description === selectedPosition ||
-        selectedPosition === "noposition" ? (
+        selectedPosition === "noposition" ||
+        employee.description === selectedPosition ? (
           <Link href={`/employee/${employee.id}`} key={employee.id}>
             <div
               className={[
