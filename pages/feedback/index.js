@@ -23,7 +23,7 @@ const Feedback = () => {
       </h1>
       <div className={styles.container}>
         <form className={styles.form}>
-          <p>Name</p>
+          <h2 className={styles.feedbackTitle}>Feedback Form</h2>
           <input
             className={styles.input}
             type={"text"}
@@ -32,7 +32,6 @@ const Feedback = () => {
             required
             onChange={() => setMessages(null)}
           ></input>
-          <p>E-mail</p>
           <input
             className={styles.input}
             type={"email"}
@@ -41,10 +40,9 @@ const Feedback = () => {
             required
             onChange={() => setMessages(null)}
           ></input>
-          <p>Text Message</p>
           <textarea
             placeholder="Enter Message"
-            className={styles.input}
+            className={styles.textarea}
             required
             name="message"
             onChange={() => setMessages(null)}
