@@ -28,7 +28,8 @@ a {
 
 .header-class {
   overflow: hidden;
-  background-color: rgba(253, 134, 104, 1);
+  /* background-color: rgba(253, 134, 104, 1); */
+  background-color: purple;
   
   position: fixed;
   top: 0;

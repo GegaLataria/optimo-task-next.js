@@ -13,9 +13,14 @@ export const getStaticProps = async () => {
 };
 
 export default function EmployeesList({ employees }) {
+  let topThree = [];
   employees.sort((a, b) =>
     a.liked > b.liked ? -1 : b.liked > a.liked ? 1 : 0
   );
+  employees.map((employee) => {
+    topThree.push(employee.name);
+  });
+  topThree = topThree.slice(0, 3);
 
   return (
     <div>
@@ -33,7 +38,13 @@ export default function EmployeesList({ employees }) {
       </div>
       {employees.map((employee) => (
         <Link href={`/employee/${employee.id}`} key={employee.id}>
-          <div className={styles.listitem}>
+          <div
+            className={[
+              `${styles.listitem} ${
+                topThree.includes(employee.name) ? styles.top : ""
+              }`,
+            ]}
+          >
             <h3>
               <img
                 className={styles.test}

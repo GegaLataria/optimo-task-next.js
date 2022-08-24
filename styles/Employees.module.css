@@ -5,7 +5,7 @@
 }
 
 .title {
-    border-bottom: 3px solid #fd8467;
+    border-bottom: 3px solid purple;
 }
 
 .test{
@@ -14,20 +14,27 @@
 
 .listitem {
     padding: 2px 16px;
-    background-color: hsla(12,97%,70%,.1);
-    margin: 20px 10px;
-    border: 0.5px solid #fd8467;
+    background-color: rgba(128, 0, 128, .4);
+    margin: 20px 30px;
+    border: 1px solid purple;
     border-radius: 10px;
     cursor: pointer;
+    text-align: center;
+}
+
+.top {
+    border: 3px solid blue;
+    background-color: rgba(128, 0, 128, .55);
 }
 
 .listitem:hover {
-    background-color: #fd8467;
+    background-color: rgba(128, 0, 128, .85);
+    color: rgba(255, 255, 255, .85);
 }
 
 .employee {
-    background-color: hsla(12,97%,70%,.1);
-    border: 0.5px solid #fd8467;
+    background-color: rgba(128, 0, 128, .3);
+    border: 1.5px solid purple;
     margin: 0px 20px 0px 20px;
     border-radius: 10px;
     text-align: center;
@@ -39,7 +46,7 @@
 }
 
 .button {
-    background-color: #fd8467;
+    background-color: rgba(128, 0, 128, .9);
     border: none;
     color: #fff;
     font-size: 20px;
@@ -49,9 +56,13 @@
 }
 
 .button:active {
-    background-color: rgba(255, 68, 0, 0.8);
+    background-color: purple;
 }
 
 .input {
     margin-bottom: 20px;
+}
+
+.slogan {
+    text-align: center;
 }

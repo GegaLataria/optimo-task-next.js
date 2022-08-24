@@ -1,0 +1,47 @@
+.header {
+    text-align: center;
+    margin-top: 7vw;
+    font-size: 50px;    
+}
+
+.title {
+    border-bottom: 3px solid purple;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    margin-top: 3vw;
+    width: 40vw;
+    height: 35vw;
+    background-color: rgba(128, 0, 128, .3);
+    border: 1.5px solid purple;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 1vw;
+}
+
+.input {
+    font-size: 1.3vw;
+    width: 20vw;
+    height: 3vw;
+    border: 1.5px solid purple;
+    border-radius: 3px;
+    background-color: rgba(128, 0, 128, .4);
+}
+
+.button {
+    border-radius: .5vw;
+    background-color: purple;
+    border-color: purple;
+    color:#FFF;
+    padding: 1vw 2vw;
+    font-size: 1.7vw;
+    margin-top: 2vw;
+}
