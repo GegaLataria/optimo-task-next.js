@@ -20,7 +20,6 @@ export default function EmployeesList({ employees }) {
   employees.sort((a, b) =>
     a.liked > b.liked ? -1 : b.liked > a.liked ? 1 : 0
   );
-  console.log(employees);
   employees.map((employee) => {
     topThree.push(employee.name);
   });

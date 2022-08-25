@@ -29,7 +29,7 @@ a {
 .header-class {
   overflow: hidden;
   /* background-color: rgba(253, 134, 104, 1); */
-  background-color: purple;
+  background-color: blueviolet;
   
   position: fixed;
   top: 0;
@@ -47,9 +47,46 @@ a {
     font-size: 20px;
 }
 
+.header {
+  text-align: center;
+  margin-top: 7vw;
+  font-size: 50px;    
+}
+
+.title {
+  border-bottom: 3px solid blueviolet;
+}
+
+.slogan {
+  text-align: center;
+  color: #fff;
+} 
+
+.main-page {
+  background-color: rgba(137, 43, 226, 0.7);
+  height: 50vh;
+  margin: 0 20px;
+  border-radius: .5vw;
+  padding: 20px;
+  /* background-image: linear-gradient(
+        to right , 
+        rgba(128, 0, 128, 0.5),
+        rgba(128, 0, 128, 0.8));   */
+}
+
 .footer {
   float: right;
   margin-top: 20px;
   margin-right: 20px;
   margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  .header {
+      font-size: 30px;
+      margin-top: 40px;
+  }
+  .slogan {
+    font-size: 20px;
+  }
 }

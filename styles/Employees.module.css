@@ -5,7 +5,7 @@
 }
 
 .title {
-    border-bottom: 3px solid purple;
+    border-bottom: 3px solid blueviolet;
 }
 
 .test{
@@ -14,9 +14,9 @@
 
 .listitem {
     padding: 2px 16px;
-    background-color: rgba(128, 0, 128, .4);
+    background-color: rgba(137, 43, 226, .4);
     margin: 20px 30px;
-    border: 1px solid purple;
+    border: 1px solid blueviolet;
     border-radius: 10px;
     cursor: pointer;
     text-align: center;
@@ -24,17 +24,17 @@
 
 .top {
     border: 3px solid blue;
-    background-color: rgba(128, 0, 128, .6);
+    background-color: rgba(137, 43, 226, .6);
 }
 
 .listitem:hover {
-    background-color: rgba(128, 0, 128, .85);
+    background-color: rgba(137, 43, 226, .85);
     color: rgba(255, 255, 255, .85);
 }
 
 .employee {
-    background-color: rgba(128, 0, 128, .3);
-    border: 1.5px solid purple;
+    background-color: rgba(137, 43, 226, .3);
+    border: 1.5px solid blueviolet;
     margin: 0px 20px 0px 20px;
     border-radius: 10px;
     text-align: center;
@@ -46,7 +46,7 @@
 }
 
 .button {
-    background-color: rgba(128, 0, 128, .9);
+    background-color: rgba(137, 43, 226, .9);
     border: none;
     color: #fff;
     font-size: 20px;
@@ -56,15 +56,11 @@
 }
 
 .button:active {
-    background-color: purple;
+    background-color: blueviolet;
 }
 
 .input {
     margin-bottom: 20px;
-}
-
-.slogan {
-    text-align: center;
 }
 
 .label {
@@ -73,4 +69,15 @@
 
 .dropdown {
     display: flex;
+}
+
+@media only screen and (max-width: 768px) {
+    .header {
+        font-size: 30px;
+        margin-top: 40px;
+    }
+
+    .employee {
+        margin-top: 40px;
+    }
 }
