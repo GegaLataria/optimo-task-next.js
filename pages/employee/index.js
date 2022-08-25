@@ -16,6 +16,7 @@ export const getStaticProps = async () => {
 export default function EmployeesList({ employees }) {
   const [selectedPosition, setSelectedPosition] = useState("noposition");
   const [selectedLocation, setSelectedLocation] = useState("noloc");
+  const [filterMessage, setFilterMessage] = useState(null);
   let topThree = [];
   employees.sort((a, b) =>
     a.liked > b.liked ? -1 : b.liked > a.liked ? 1 : 0
@@ -87,6 +88,7 @@ export default function EmployeesList({ employees }) {
           </Link>
         ) : null
       )}
+      {filterMessage ? <h1>Nothing to display</h1> : null}
     </div>
   );
 }
