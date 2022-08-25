@@ -4,16 +4,35 @@ import styles from "../../styles/Feedback.module.css";
 const Feedback = () => {
   const [messages, setMessages] = useState(null);
 
-  const handleClick = (e) => {
+  const handleClick = async (e) => {
     e.preventDefault();
     const form = document.forms[0];
     if (form.name.value && form.email.value && form.message.value) {
-      setMessages("Feedback has been successfully sent");
+      const response = await fetch(
+        "https://test-task-api-optimo.herokuapp.com/feedback",
+        {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: form.name.value,
+            email: form.email.value,
+            message: form.message.value,
+          }),
+        }
+      );
+
+      response.json().then((data) => {
+        console.log(data);
+        setMessages("Feedback sent successfully");
+      });
       form.name.value = "";
       form.email.value = "";
       form.message.value = "";
     } else {
-      setMessages("Please complete all the required fields");
+      setMessages("Complete all the required fields");
     }
   };
   return (
