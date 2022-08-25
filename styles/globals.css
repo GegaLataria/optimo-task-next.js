@@ -26,20 +26,35 @@ a {
   }
 }
 
+
 .header-class {
   overflow: hidden;
   /* background-color: rgba(253, 134, 104, 1); */
   background-color: blueviolet;
-  
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 999999999;
 }
 
+.header-class .helper-optimo {
+  float: left;
+}
+
+.header-class .header-class__item {
+  float: right;
+}
+
+.helper-optimo {
+  background-color: violet;
+  color: #fff;
+  text-align: center;
+  padding: 1vw 1.14vw;
+  text-decoration: none;
+  font-size: 20px;
+}
 
 .header-class__item {
-    float: right;
     color: #fff;
     text-align: center;
     padding: 1vw 1.14vw;
@@ -60,18 +75,38 @@ a {
 .slogan {
   text-align: center;
   color: #fff;
+  font-size: 50px;
 } 
 
 .main-page {
   background-color: rgba(137, 43, 226, 0.7);
-  height: 50vh;
+  border: 3px solid blueviolet;
   margin: 0 20px;
-  border-radius: .5vw;
+  text-align: center;
+  border-radius: 5px;
   padding: 20px;
-  /* background-image: linear-gradient(
-        to right , 
-        rgba(128, 0, 128, 0.5),
-        rgba(128, 0, 128, 0.8));   */
+  display: flex;
+  align-items: center;
+}
+
+.main-logo {
+  border: 1.5px solid blueviolet;
+  width: 40vw;
+  border-radius: 10px;
+}
+
+.main-button {
+  background-color: #fff;
+  border: 1.5px solid blueviolet;
+  padding: 1.5vw 3vw;
+  border-radius: .5vw;
+  font-size: 1.4vw;
+  margin-top: 2vw;
+}
+
+.main-button:active {
+  background-color: rgba(128, 128, 128, .7);
+  color: #fff;
 }
 
 .footer {
@@ -82,11 +117,46 @@ a {
 }
 
 @media only screen and (max-width: 768px) {
+  .main-page {
+    height: 60vh;
+    flex-direction: column;
+  }
+
+  .main-logo {
+    width: 70vw;
+    margin-top: 30px;
+  }
+
   .header {
       font-size: 30px;
       margin-top: 40px;
   }
   .slogan {
+    font-size: 25px;
+  }
+
+  .header-class__item {
+    font-size: 17px;
+  }
+
+  .helper-optimo {
+    font-size: 17px;
+  }
+
+  .main-button {
     font-size: 20px;
+    padding: 10px 20px;
   }
 }
+
+@media only screen and (max-width: 300px) {
+  .header-class__item {
+    font-size: 12px;
+  }
+
+  .helper-optimo {
+    font-size: 12px;
+  }
+
+}
+
