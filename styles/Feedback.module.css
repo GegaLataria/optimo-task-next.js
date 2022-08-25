@@ -54,7 +54,7 @@
     border: 1.5px solid purple;
     border-radius: 3px;
     background-color: rgba(128, 0, 128, .4);
-    margin-bottom: 20px;
+    margin-bottom: 2vw;
 }
 
 .textarea::placeholder {
@@ -68,5 +68,43 @@
     color:#FFF;
     padding: 1vw 2vw;
     font-size: 1.7vw;
-    margin-top: 2vw;
+    margin-top: 1vw;
+}
+
+.message {
+    font-size: 1.5vw;
+}
+
+@media only screen and (max-width: 768px) {
+    .form {
+        height: 50vh;
+        width: 80vw;
+    }
+
+    .feedbackTitle {
+        font-size: 20px;
+    }
+
+    .input {
+        font-size: 14px;
+        width: 45vw;
+        height: 4vh;
+    }
+
+    .textarea {
+        height: 7vh;
+        width: 60vw;
+        max-width: 70vw;
+        max-height: 9vh;
+        font-size: 14px;
+    }
+
+    .button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    .message {
+        font-size: 14px;
+    }
 }

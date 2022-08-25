@@ -8,19 +8,6 @@ export const getStaticProps = async () => {
   );
   const data = await res.json();
 
-  //newly added code for location fetching
-  // const loc = data.location_id;
-  // const res2 = await fetch(
-  //   "https://test-task-api-optimo.herokuapp.com/location"
-  // );
-  // const data2 = await res2.json();
-  // let location;
-  // data2.map((item) => {
-  //   if (item.id === loc) {
-  //     location = item.name;
-  //   }
-  // });
-
   return {
     props: { employees: data },
   };
@@ -33,6 +20,7 @@ export default function EmployeesList({ employees }) {
   employees.sort((a, b) =>
     a.liked > b.liked ? -1 : b.liked > a.liked ? 1 : 0
   );
+  console.log(employees);
   employees.map((employee) => {
     topThree.push(employee.name);
   });
@@ -51,7 +39,7 @@ export default function EmployeesList({ employees }) {
       <h1 className={styles.header}>
         <span className={styles.title}>Employees List</span>
       </h1>
-      <div>
+      <div className={styles.dropdown}>
         <label className={styles.label}>
           Filter by position:
           <select onChange={handleChange} value={selectedPosition}>
