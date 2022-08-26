@@ -7,11 +7,11 @@ const Footer = () => {
         <Link href={"/"}>
           <a className="footer-class__item">Home</a>
         </Link>
-        <Link href={"/feedback"}>
-          <a className="footer-class__item">Feedback</a>
-        </Link>
         <Link href={"/employee"}>
           <a className="footer-class__item">Employees</a>
+        </Link>
+        <Link href={"/feedback"}>
+          <a className="footer-class__item">Feedback</a>
         </Link>
       </footer>
       <p className="footer">Copyright 2022</p>

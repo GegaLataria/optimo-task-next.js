@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
@@ -7,7 +8,13 @@ export default function Home() {
         <span className="title">Optimo Group</span>
       </h1>
       <div className="main-page">
-        <img className="main-logo" src="/OPTIMO.png" alt="logo"></img>
+        <Image
+          className="main-logo"
+          src="/OPTIMO.png"
+          alt="logo"
+          width={500}
+          height={500}
+        ></Image>
         <h2 className="slogan">
           {`We deliver Tomorrow's Solutions Today`}
           <br></br>

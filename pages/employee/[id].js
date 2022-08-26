@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useState } from "react";
 import styles from "../../styles/Employees.module.css";
 
@@ -64,11 +65,12 @@ const Details = ({ employee, location }) => {
       </h1>
       <div className={styles.employee}>
         <div>
-          <img
-            className={styles.avatar}
+          <Image
             src={`https://test-task-api-optimo.herokuapp.com${employee.avatar}`}
             alt="avatar"
-          ></img>
+            width={300}
+            height={300}
+          ></Image>
           <h1>{employee.name}</h1>
           <h3>Position: {employee.description}</h3>
           <h3>Likes: {likes}</h3>

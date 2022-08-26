@@ -8,10 +8,6 @@
     border-bottom: 3px solid blueviolet;
 }
 
-.test{
-    transform: translate(-5px, 10px);
-}
-
 .listitem {
     padding: 2px 16px;
     background-color: rgba(137, 43, 226, .4);
@@ -39,10 +35,6 @@
     border-radius: 10px;
     text-align: center;
     padding: 50px;
-}
-
-.avatar {
-   border-radius: 10px;
 }
 
 .button {

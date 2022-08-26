@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import styles from "../../styles/Employees.module.css";
@@ -73,12 +74,14 @@ export default function EmployeesList({ employees }) {
               ]}
             >
               <h3>
-                <img
-                  className={styles.test}
-                  src={`https://test-task-api-optimo.herokuapp.com${employee.avatar}`}
-                  alt="avatar"
-                  width={"40px"}
-                ></img>
+                <div>
+                  <Image
+                    src={`https://test-task-api-optimo.herokuapp.com${employee.avatar}`}
+                    alt="avatar"
+                    width={70}
+                    height={70}
+                  ></Image>
+                </div>
                 {employee.name}
               </h3>
               <h3>Position: {employee.description}</h3>

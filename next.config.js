@@ -2,6 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-}
+  images: {
+    domains: ["test-task-api-optimo.herokuapp.com"],
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
