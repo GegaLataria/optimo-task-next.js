@@ -24,6 +24,7 @@ a {
     color: white;
     background: black;
   }
+
 }
 
 
@@ -102,6 +103,7 @@ a {
   border-radius: .5vw;
   font-size: 1.4vw;
   margin-top: 2vw;
+  color: black;
 }
 
 .main-button:active {

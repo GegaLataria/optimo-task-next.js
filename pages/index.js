@@ -9,7 +9,7 @@ export default function Home() {
       <div className="main-page">
         <img className="main-logo" src="/OPTIMO.png" alt="logo"></img>
         <h2 className="slogan">
-          We deliver Tomorrow's Solutions Today
+          {`We deliver Tomorrow's Solutions Today`}
           <br></br>
           <Link href={"/feedback"}>
             <button className="main-button">Contact Us</button>
